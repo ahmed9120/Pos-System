@@ -1,3 +1,6 @@
+let loginContainerDiv = document.querySelector(".login-container");
+let homeContainerDiv = document.querySelector(".home-content");
+
 let signupDiv = document.querySelector(".signup");
 let loginDiv = document.querySelector(".login");
 let savedAccounts = [];
@@ -49,7 +52,8 @@ function loginAcc() {
     alert("account not register");
   } else {
     if (logPass.value === savedAccounts[isAccFound].password) {
-      console.log("login success");
+      loginContainerDiv.classList.replace("d-flex", "d-none");
+      homeContainerDiv.classList.replace("d-none", "d-flex");
     } else {
       alert("wrong Password ");
     }
